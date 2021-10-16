@@ -1,7 +1,9 @@
 Faire un fichier config.json dans ce repertoire.
 
 
-exemple de config
+exemple de config:
+
+
 {
     "development": {
       "username": "root",
