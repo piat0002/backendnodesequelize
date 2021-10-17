@@ -6,4 +6,5 @@ module.exports = (app) => {
             message: 'welcome to the BIg chungus API',
         }));
     app.post("/api/user",  userController.create);
+    app.get("/api/user/:id", userController.findOne);
 }
