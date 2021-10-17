@@ -8,5 +8,5 @@ module.exports = (app) => {
     app.post("/api/user",  userController.create);
     app.get("/api/user/:id", userController.findOne);
     app.put("/api/user/:id", userController.update);
-        
+    app.delete("/api/user/:id", userController.delete);
 }

@@ -61,6 +61,28 @@ module.exports = {
             });
 
 
+    },
+    delete(req, res) {
+        const id = req.params.id;
+        return User.destroy({
+            where: { id: id }
+        })
+            .then(num => {
+                if (num == 1) {
+                    res.send({
+                        message: "le user a été effacé avec succès!"
+                    });
+                } else {
+                    res.send({
+                        message: `Ne peut pas effacer le user avec id=${id}. Il n'a pas été trouvé!`
+                    });
+                }
+            })
+            .catch(err => {
+                res.status(500).send({
+                    message: "Ne peut pas effacer le user avec id=" + id
+                });
+            });
     }
 
 };
